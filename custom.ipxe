@@ -32,6 +32,9 @@ boot || goto custom_exit
 echo Chains into another menu...
 chain https://raw.githubusercontent.com/${github_user}/netboot.xyz-custom/master/custom1.ipxe || goto custom
 
+:iscsi
+sanboot iscsi:192.168.10.9:::1:iqn.2020-10.lan.lehmanns:service77.target01
+
 :custom_exit
 chain utils.ipxe
 exit
